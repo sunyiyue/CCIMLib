@@ -1,0 +1,6 @@
+framework module CCIMLib {
+  umbrella header "CCIMLib.h"
+
+  export *
+  module * { export * }
+}
