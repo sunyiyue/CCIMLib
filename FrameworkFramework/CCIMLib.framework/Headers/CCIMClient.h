@@ -193,7 +193,7 @@ typedef enum {
                                             必填
  @param conversationType 会话类型             是
  @param targetId 联系人ID/讨论组ID             是
- @param mType 自定义消息类型(使用255以上的数字)    是
+ @param mType 自定义消息类型(使用255以上的数字)   是
  @param messageContent 消息的内容              是
  @param search 服务器用于搜索的字段              是
  @param content  接收方离线时需要显示的远程推送内容    是
@@ -243,7 +243,7 @@ typedef enum {
  
  @param sid 会话ID
  @param conversationType 会话类型
- @param size 获取消息列表长度，默认50
+ @param size 获取消息列表长度
  @param messageId 本地存储的消息ID，获取该消息之后的消息  *****不存在则获取最新size条消息*****
  @param successBlock more为本次获得数据后续是否还存在数据 msgs内为获取到的消息列表
  @param errorBlock 错误信息
@@ -260,13 +260,11 @@ typedef enum {
  
  @param sid 会话ID
  @param conversationType 会话类型
- @param timestamp 最后更新时间
  使用 setReceiveMessageDelegate 方法设置代理   并实现此方法 onMessageReceiptResponse: 就会接收到该会话下成员的已读信息
  */
 
 - (void)getReadStat:(NSString *)sid
-               type:(CCConversationType)conversationType
-          timestamp:(long)timestamp;
+               type:(CCConversationType)conversationType;
 
 /**
  撤回自己发送的消息
@@ -397,7 +395,7 @@ typedef enum {
  */
 - (void)changeDiscussionNameById:(NSString *)discussionId
                             name:(NSString *)discussionName
-                         success:(void (^)(BOOL success))successBlock
+                         success:(void (^)(BOOL success,NSString *message))successBlock
                            error:(void (^)(CCError *error))errorBlock;
 /**
  讨论组添加成员
@@ -459,7 +457,7 @@ typedef enum {
 
  @param discussionId 讨论组ID
  @param muted 讨论组是否免打扰
- @param successBlock YES  NO
+ @param successBlock 返回 true 成功 false失败
  @param errorBlock 错误信息
  */
 - (void)muteDiscussionById:(NSString *)discussionId

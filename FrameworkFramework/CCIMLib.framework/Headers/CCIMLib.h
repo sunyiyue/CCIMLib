@@ -31,10 +31,8 @@ FOUNDATION_EXPORT const unsigned char CCIMLibVersionString[];
 #import<CCIMLib/CCMessage.h>
 #import<CCIMLib/CCError.h>
 #import<CCIMLib/CCUploadMediaStatusListener.h>
-//#import<CCIMLib/CCReadStat.h>
 #import<CCIMLib/MessageDraft.h>
 #import<CCIMLib/CCSession.h>
-//#import<CCIMLib/CCStateModel.h>
 #import<CCIMLib/CCIMClient.h>
 #import<CCIMLib/CCGroupInfo.h>
 #import<CCIMLib/CCAppEngine.h>
